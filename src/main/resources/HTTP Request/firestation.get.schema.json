@@ -1,5 +1,5 @@
 {
-  "$id": "firestation_data.schema.json",
+  "$id": "firestation.get.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "required":[
     "persons",
@@ -12,7 +12,7 @@
       "type": "array",
       "description": "array of persons linked to firestation",
       "items": {
-        "$ref": "person.schema.json"
+        "$ref": "../models_input/person.schema.json"
       }
     },
     "adultCount": {

@@ -22,7 +22,7 @@
           {
             "name": "stationNumber",
             "in": "query",
-            "description": "stationNumber ID of the firestation",
+            "description": "firestation ID",
             "required": true,
             "allowEmptyValue": false,
             "schema": {
@@ -36,7 +36,7 @@
             "content": {
               "application/json;charset=utf-8": {
                 "schema": {
-                  "$ref": "model/firestation_data.schema.json"
+                  "$ref": "model/firestation.get.schema.json"
                 }
               }
             }
@@ -65,7 +65,65 @@
             "content": {
               "application/json;charset=utf-8": {
                 "schema": {
-                  "$ref": "model/child_alert.schema.json"
+                  "$ref": "model/child_alert.get.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/phoneAlert": {
+      "get": {
+        "summary": "return a list of phone living in the area linked to this firestation",
+        "parameters": [
+          {
+            "name": "firestation",
+            "in": "query",
+            "description": "firestation ID",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Accepted",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "model/phone_alert.get.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fire": {
+      "get": {
+        "summary": "return a list of persons living at a specific address and the firestation ID linked to this address",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "address where the fire is started",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Accepted",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "model/fire.get.schema.json"
                 }
               }
             }

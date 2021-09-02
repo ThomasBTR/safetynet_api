@@ -1,8 +1,13 @@
 {
-  "$id": "medical_record.schema.json",
+  "$id": "child.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "medical record",
   "type": "object",
+  "required":[
+    "firstName",
+    "lastName",
+    "age",
+    "persons"
+  ],
   "properties": {
     "firstName": {
       "type": "string"
@@ -10,17 +15,13 @@
     "lastName": {
       "type": "string"
     },
-    "medications": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "regex": "[a-z]*:[0-9]*+mg"
-      }
+    "age": {
+      "type": "string"
     },
-    "allergies": {
+    "persons": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "person.schema.json"
       }
     }
   }
