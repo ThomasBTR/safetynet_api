@@ -1,0 +1,20 @@
+{
+    "$id": "address.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "zip",
+    "address"
+  ],
+  "properties": {
+    "zip": {
+      "type":"string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    }
+  }
+}

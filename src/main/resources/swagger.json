@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SafetyNet Alerts App",
+    "description": "SafetyNet Alerts App is design to help safety teams saving lives by providing updated data from their juridiction. This app will provide data on persons, their whereabouts when their is a danger.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "description": "to be define by the customer",
+      "url": "http://localhost:8080/"
+    }
+  ],
+  "paths": {
+    "/firestation": {
+      "get": {
+        "tags": [
+          "Station_Number"
+        ],
+        "summary": "Retourne la liste des personnes couverte par la caserne de pompier correspondante.",
+        "parameters": [
+          {
+            "name": "stationNumber",
+            "in": "query",
+            "description": "stationNumber ID of the firestation",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Accepted",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "model/firestation_data.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/childAlert": {
+      "get": {
+        "summary": "return a list of child living at this address",
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "address where the childs live",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Accepted",
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "model/child_alert.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
