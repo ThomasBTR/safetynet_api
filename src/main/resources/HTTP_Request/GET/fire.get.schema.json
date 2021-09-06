@@ -1,18 +1,18 @@
 {
-  "$id": "firestation.get.schema.json",
+  "$id": "fire.get.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "required":[
-    "persons",
+    "phones",
     "adultCount",
     "infantCount"
   ],
   "type": "object",
   "properties": {
-    "persons": {
+    "phones": {
       "type": "array",
-      "description": "array of persons linked to firestation",
+      "description": "return the phone of persons linked to firestation",
       "items": {
-        "$ref": "../models_input/person.schema.json"
+        "$ref": "../../models_output/phone.schema.json"
       }
     },
     "adultCount": {

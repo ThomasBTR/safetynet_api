@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [
-    "zip",
+    "persons",
     "address"
   ],
   "properties": {
@@ -15,6 +15,18 @@
     },
     "city": {
       "type": "string"
+    },
+    "persons": {
+      "type": "array",
+      "description": "An array of persons living at this address",
+      "items": {
+        "person": {
+          "$ref":"../models_output/person_info.schema.json"
+        },
+        "medical_records": {
+          "$ref": "../models_input/medical_record.schema.json"
+        }
+      }
     }
   }
 }
