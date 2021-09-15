@@ -1,9 +1,13 @@
 {
-  "$id": "medical_record.schema.json",
+  "$id": "medical_record.post.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "medical record",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "string",
+      "format":"uuid"
+    },
     "firstName": {
       "type": "string"
     },
