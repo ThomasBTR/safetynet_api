@@ -73,7 +73,7 @@
           "Station Number"
         ],
         "summary": "Update a mapping firestation for a specific address.",
-        "operationId": "AddFirestationMappingToSpecifiedAddress",
+        "operationId": "UpdateFirestationMappingToSpecifiedAddress",
         "parameters": [
           {
             "name": "address",
