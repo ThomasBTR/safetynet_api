@@ -15,6 +15,7 @@
     <description>Alerts api</description>
     <properties>
         <java.version>1.8</java.version>
+        <mainClass>com.safetynet.App</mainClass>
     </properties>
     <dependencies>
 
@@ -79,9 +80,21 @@
             <artifactId>swagger-maven-plugin</artifactId>
             <version>2.1.10</version>
         </dependency>
-
-
-
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>2.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-oas</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.joschi.jackson</groupId>
+            <artifactId>jackson-datatype-threetenbp</artifactId>
+            <version>2.12.5</version>
+        </dependency>
 
     </dependencies>
 
@@ -110,8 +123,13 @@
                         </goals>
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/openapi.json</inputSpec>
-                            <language>java</language>
-                            <output>${project.build.directory}/generated-sources/swagger</output>
+                            <language>spring</language>
+                            <configOptions>
+                                <interfaceOnly>true</interfaceOnly>
+                                <useTags>true</useTags>
+                                <dateLibrary>java8</dateLibrary>
+                            </configOptions>
+                            <output>${project.build.directory}/generated-sources/com/safetynet</output>
                         </configuration>
                     </execution>
                 </executions>
