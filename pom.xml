@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.safetynet</groupId>
-    <artifactId>Alerts</artifactId>
+    <artifactId>api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>api</name>
     <description>Alerts api</description>
