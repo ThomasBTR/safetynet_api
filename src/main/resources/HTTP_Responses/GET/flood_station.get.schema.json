@@ -10,7 +10,9 @@
       "type": "array",
       "description": "array of phone linked to firestation",
       "items": {
-        "$ref": "../../models_output/address.schema.json"
+        "adress": {
+          "$ref": "../../models_output/address.schema.json"
+        }
       }
     }
   }

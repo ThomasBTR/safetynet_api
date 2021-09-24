@@ -21,7 +21,7 @@
     "persons": {
       "type": "array",
       "items": {
-        "$ref": "../models_input/person.schema.json"
+        "$ref": "person.schema.json"
       }
     }
   }

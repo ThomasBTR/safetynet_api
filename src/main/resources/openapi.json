@@ -12,6 +12,29 @@
     }
   ],
   "paths": {
+    "/firestations": {
+      "post": {
+        "tags": [
+          "Add Firestations"
+        ],
+        "summary": "Add Firestations data to the database",
+        "operationId": "AddFirestationToDatabase",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "models_input/firestations.schema.json"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Accepted"
+          }
+        }
+      }
+    },
     "/firestation": {
       "get": {
         "tags": [
@@ -140,7 +163,7 @@
           "200": {
             "description": "Accepted",
             "content": {
-              "application/json;charset=utf-8": {
+              "application/json": {
                 "schema": {
                   "$ref": "HTTP_Responses/GET/child_alert.get.schema.json"
                 }
@@ -173,7 +196,7 @@
           "200": {
             "description": "Accepted",
             "content": {
-              "application/json;charset=utf-8": {
+              "application/json": {
                 "schema": {
                   "$ref": "HTTP_Responses/GET/phone_alert.get.schema.json"
                 }
@@ -206,7 +229,7 @@
           "200": {
             "description": "Accepted",
             "content": {
-              "application/json;charset=utf-8": {
+              "application/json": {
                 "schema": {
                   "$ref": "HTTP_Responses/GET/fire.get.schema.json"
                 }
@@ -315,12 +338,35 @@
           "200": {
             "description": "Accepted",
             "content": {
-              "application/json;charset=utf-8": {
+              "application/json": {
                 "schema": {
                   "$ref": "HTTP_Responses/GET/city_mailing_list.get.schema.json"
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/medicalrecords": {
+      "post": {
+        "tags": [
+          "Add Medical Records"
+        ],
+        "summary": "Add Medical Records data to the database",
+        "operationId": "AddMedicalRecordsToDatabase",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "models_input/medicalrecords.schema.json"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Accepted"
           }
         }
       }
@@ -425,6 +471,29 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/persons": {
+      "post": {
+        "tags": [
+          "Add Persons"
+        ],
+        "summary": "Add Persons data to the database",
+        "operationId": "AddPersonsToDatabase",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "models_input/persons.schema.json"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Accepted"

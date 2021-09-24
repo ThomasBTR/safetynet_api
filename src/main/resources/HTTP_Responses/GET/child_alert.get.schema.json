@@ -11,7 +11,7 @@
       "description": "array of child linked to firestation",
       "items": {
         "$ref": "../../models_output/child.schema.json"
-      }
+        }
     }
   }
 }
